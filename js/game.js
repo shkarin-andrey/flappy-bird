@@ -22,7 +22,7 @@ document.addEventListener("keydown", birdUp);
 document.addEventListener("touchstart", birdUp);
 
 function birdUp() {
-  birdY -= 40;
+  birdY -= 60;
 }
 
 const pipe = [];
