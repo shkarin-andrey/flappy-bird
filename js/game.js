@@ -19,6 +19,7 @@ let birdX = 50;
 let scope = 0;
 
 document.addEventListener("keydown", birdUp);
+document.addEventListener("touchstart", birdUp);
 
 function birdUp() {
   birdY -= 40;
