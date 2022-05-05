@@ -59,7 +59,7 @@ function draw() {
           birdY + bird.height >= pipe[i].y + pipeUp.height + gap)) ||
       birdY + bird.height >= canvas.height - fg.height
     ) {
-      cancelAnimationFrame(animate);
+      clearInterval(animate);
     }
 
     if (pipe[i].x === 50) {
@@ -67,8 +67,9 @@ function draw() {
     }
   }
 
-  birdY += 1;
-  const animate = requestAnimationFrame(draw);
+  birdY += 0.7;
 }
+
+const animate = setInterval(draw);
 
 pipeDown.addEventListener("load", draw);
