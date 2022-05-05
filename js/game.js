@@ -7,11 +7,17 @@ const pipeUp = new Image();
 const pipeDown = new Image();
 const fg = new Image();
 
+const fly = new Audio();
+const scoreAudio = new Audio();
+
 bird.src = "img/bird.png";
 bg.src = "img/bg.png";
 fg.src = "img/fg.png";
 pipeUp.src = "img/pipeUp.png";
 pipeDown.src = "img/pipeDown.png";
+
+fly.src = "audio/fly.mp3";
+scoreAudio.src = "audio/score.mp3";
 
 const gap = 120;
 let birdY = 250;
@@ -23,6 +29,7 @@ document.addEventListener("touchstart", birdUp);
 
 function birdUp() {
   birdY -= 60;
+  fly.play();
 }
 
 const pipe = [];
@@ -64,6 +71,7 @@ function draw() {
 
     if (pipe[i].x === 50) {
       scope += 1;
+      scoreAudio.play();
     }
   }
 
